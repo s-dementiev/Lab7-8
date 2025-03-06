@@ -1,12 +1,13 @@
 #include <iostream>
+#include <chrono>
 
 int main()
 {
-    int date = 6;
-    std::string month = "March";
+    auto sysTime = std::chrono::system_clock::now();
+    std::time_t dateTime = std::chrono::system_clock::to_time_t(sysTime);
+  
+    std::cout << "Hello ICT group!" << std::endl;
+    std::cout << "Today is a good day: " << std::ctime(&dateTime) << std::endl;
     
-    std::cout << "Hello ICT groop!\n"
-    std::cout << "Today is " << month << " " << Date;
-    
-    return 0;
+    return 0;    
 }
